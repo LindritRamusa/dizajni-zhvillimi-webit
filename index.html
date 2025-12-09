@@ -1,13 +1,165 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>dizajni-zhvillimi-webit</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Klinika Medina - Kujdesi mjekësor profesional dhe i sigurt">
+    <title>Klinika Medina - Faqja Kryesore</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="index.html">Klinika Medina</a>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="active">Faqja Kryesore</a></li>
+                    <li><a href="about.html">Rreth Nesh</a></li>
+                    <li><a href="services.html">Shërbimet</a></li>
+                    <li><a href="contact.html">Kontakti</a></li>
+                    <li><a href="login.html" class="btn-login">Login</a></li>
+                    <li><a href="register.html" class="btn-register">Regjistrohu</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-slider">
+        <div class="slider-container" id="sliderContainer">
+            <div class="slide active">
+                <div class="slide-content">
+                    <h1>Mirësevini në Klinikën Medina</h1>
+                    <p>Kujdesi mjekësor profesional për ju dhe familjen tuaj</p>
+                    <a href="services.html" class="btn-primary">Shiko Shërbimet</a>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-content">
+                    <h1>Mjekë Profesionalë</h1>
+                    <p>Ekipi ynë i ekspertëve është këtu për t'ju ndihmuar</p>
+                    <a href="about.html" class="btn-primary">Më Shumë</a>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-content">
+                    <h1>Termina Online</h1>
+                    <p>Rezervoni terminin tuaj lehtësisht dhe shpejt</p>
+                    <a href="contact.html" class="btn-primary">Kontaktoni</a>
+                </div>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button class="slider-btn prev" id="prevBtn">‹</button>
+            <button class="slider-btn next" id="nextBtn">›</button>
+        </div>
+        <div class="slider-dots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Pse të Zgjidhni Klinikën Medina?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏥</div>
+                    <h3>Teknologji Moderne</h3>
+                    <p>Pajisje mjekësore të fundit për diagnostikim dhe trajtim të saktë</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍⚕️</div>
+                    <h3>Mjekë Ekspertë</h3>
+                    <p>Ekipi ynë përbëhet nga specialistë me përvojë të gjatë</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⏰</div>
+                    <h3>Orar Fleksibël</h3>
+                    <p>Jashtë orarit normal për nevojat tuaja urgjente</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💊</div>
+                    <h3>Trajtim Personalizuar</h3>
+                    <p>Plane trajtimesh të personalizuara për çdo pacient</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-preview">
+        <div class="container">
+            <h2 class="section-title">Shërbimet Tona</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🩺</div>
+                    <h3>Konsultime Mjekësore</h3>
+                    <p>Konsultime me mjekë specialistë për çdo problem shëndetësor</p>
+                    <a href="service-details.html?id=1" class="btn-secondary">Më Shumë</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔬</div>
+                    <h3>Analiza Laboratorike</h3>
+                    <p>Teste dhe analiza të plota laboratorike me rezultate të shpejta</p>
+                    <a href="service-details.html?id=2" class="btn-secondary">Më Shumë</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💉</div>
+                    <h3>Vaksinime</h3>
+                    <p>Vaksinime për të gjitha moshën dhe për udhëtime</p>
+                    <a href="service-details.html?id=3" class="btn-secondary">Më Shumë</a>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="services.html" class="btn-primary">Shiko Të Gjitha Shërbimet</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Klinika Medina</h3>
+                    <p>Kujdesi mjekësor profesional dhe i sigurt për ju dhe familjen tuaj.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Linqe të Shpejta</h4>
+                    <ul>
+                        <li><a href="index.html">Faqja Kryesore</a></li>
+                        <li><a href="about.html">Rreth Nesh</a></li>
+                        <li><a href="services.html">Shërbimet</a></li>
+                        <li><a href="contact.html">Kontakti</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Kontakti</h4>
+                    <p>📍 Rruga Ramadan Rexhepi, Ferizaj</p>
+                    <p>📞 +383 49 162 111</p>
+                    <p>✉️ medina@medina-ks.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Orari</h4>
+                    <p>E Hënë - E Premte: 08:00 - 20:00</p>
+                    <p>E Shtunë: 09:00 - 15:00</p>
+                    <p>E Dielë: E Mbyllur</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Klinika Medina. Të gjitha të drejtat e rezervuara.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/slider.js"></script>
+</body>
 </html>

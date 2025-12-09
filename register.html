@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Regjistrohu - Klinika Medina">
+    <title>Regjistrohu - Klinika Medina</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="index.html">Klinika Medina</a>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Faqja Kryesore</a></li>
+                    <li><a href="about.html">Rreth Nesh</a></li>
+                    <li><a href="services.html">Shërbimet</a></li>
+                    <li><a href="contact.html">Kontakti</a></li>
+                    <li><a href="login.html" class="btn-login">Login</a></li>
+                    <li><a href="register.html" class="btn-register active">Regjistrohu</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-header">
+                    <h1>Krijo Llogari</h1>
+                    <p>Regjistrohu për të përdorur shërbimet tona</p>
+                </div>
+                <form id="registerForm" class="auth-form">
+                    <div class="form-group">
+                        <label for="registerName">Emri dhe Mbiemri</label>
+                        <input 
+                            type="text" 
+                            id="registerName" 
+                            name="name" 
+                            placeholder="shkruani emrin dhe mbiemrin"
+                            required
+                        >
+                        <span class="error-message" id="registerNameError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">Email</label>
+                        <input 
+                            type="email" 
+                            id="registerEmail" 
+                            name="email" 
+                            placeholder="shkruani email-in tuaj"
+                            required
+                        >
+                        <span class="error-message" id="registerEmailError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPhone">Telefoni</label>
+                        <input 
+                            type="tel" 
+                            id="registerPhone" 
+                            name="phone" 
+                            placeholder="+383 49 XXX XXX"
+                            required
+                        >
+                        <span class="error-message" id="registerPhoneError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Fjalëkalimi</label>
+                        <input 
+                            type="password" 
+                            id="registerPassword" 
+                            name="password" 
+                            placeholder="minimumi 8 karaktere"
+                            required
+                        >
+                        <span class="error-message" id="registerPasswordError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerConfirmPassword">Konfirmo Fjalëkalimin</label>
+                        <input 
+                            type="password" 
+                            id="registerConfirmPassword" 
+                            name="confirmPassword" 
+                            placeholder="shkruani përsëri fjalëkalimin"
+                            required
+                        >
+                        <span class="error-message" id="registerConfirmPasswordError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                            <span>Unë pranoj <a href="#">kushtet dhe rregullat</a></span>
+                        </label>
+                        <span class="error-message" id="agreeTermsError"></span>
+                    </div>
+                    <button type="submit" class="btn-primary btn-full">Regjistrohu</button>
+                    <div class="auth-footer">
+                        <p>Keni tashmë llogari? <a href="login.html">Hyr</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Klinika Medina</h3>
+                    <p>Kujdesi mjekësor profesional dhe i sigurt për ju dhe familjen tuaj.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Linqe të Shpejta</h4>
+                    <ul>
+                        <li><a href="index.html">Faqja Kryesore</a></li>
+                        <li><a href="about.html">Rreth Nesh</a></li>
+                        <li><a href="services.html">Shërbimet</a></li>
+                        <li><a href="contact.html">Kontakti</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Kontakti</h4>
+                    <p>📍 Rruga Ramadan Rexhepi, Ferizaj</p>
+                    <p>📞 +383 49 162 111</p>
+                    <p>✉️ medina@medina-ks.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Orari</h4>
+                    <p>E Hënë - E Premte: 08:00 - 20:00</p>
+                    <p>E Shtunë: 09:00 - 15:00</p>
+                    <p>E Dielë: E Mbyllur</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Klinika Medina. Të gjitha të drejtat e rezervuara.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/validation.js"></script>
+</body>
+</html>
+

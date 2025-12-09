@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detajet e shërbimit - Klinika Medina">
+    <title>Detajet e Shërbimit - Klinika Medina</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="index.html">Klinika Medina</a>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Faqja Kryesore</a></li>
+                    <li><a href="about.html">Rreth Nesh</a></li>
+                    <li><a href="services.html">Shërbimet</a></li>
+                    <li><a href="contact.html">Kontakti</a></li>
+                    <li><a href="login.html" class="btn-login">Login</a></li>
+                    <li><a href="register.html" class="btn-register">Regjistrohu</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 id="serviceTitle">Detajet e Shërbimit</h1>
+            <p id="serviceSubtitle">Informacione të detajuara për shërbimin</p>
+        </div>
+    </section>
+
+    <section class="service-details">
+        <div class="container">
+            <div class="service-details-content">
+                <div class="service-details-main">
+                    <div class="service-image-large" id="serviceImage">
+                        <div class="placeholder-image-large">🩺</div>
+                    </div>
+                    <div class="service-description" id="serviceDescription">
+                        <h2 id="serviceName">Shërbimi</h2>
+                        <p id="serviceFullDescription">Përshkrimi i plotë i shërbimit do të shfaqet këtu.</p>
+                    </div>
+                </div>
+                <div class="service-details-sidebar">
+                    <div class="info-box">
+                        <h3>Informacione</h3>
+                        <ul id="serviceInfo">
+                            <li><strong>Kohëzgjatja:</strong> <span id="duration">-</span></li>
+                            <li><strong>Çmimi:</strong> <span id="price">-</span></li>
+                            <li><strong>Disponueshmëria:</strong> <span id="availability">-</span></li>
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <h3>Rezervo Termin</h3>
+                        <p>Kontaktoni për të rezervuar terminin tuaj</p>
+                        <a href="contact.html" class="btn-primary">Kontakto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="related-services">
+        <div class="container">
+            <h2 class="section-title">Shërbime Të Ngjashme</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🩺</div>
+                    <h3>Konsultime Mjekësore</h3>
+                    <p>Konsultime me mjekë specialistë</p>
+                    <a href="service-details.html?id=1" class="btn-secondary">Më Shumë</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔬</div>
+                    <h3>Analiza Laboratorike</h3>
+                    <p>Teste dhe analiza laboratorike</p>
+                    <a href="service-details.html?id=2" class="btn-secondary">Më Shumë</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💉</div>
+                    <h3>Vaksinime</h3>
+                    <p>Vaksinime për të gjitha moshën</p>
+                    <a href="service-details.html?id=3" class="btn-secondary">Më Shumë</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Klinika Medina</h3>
+                    <p>Kujdesi mjekësor profesional dhe i sigurt për ju dhe familjen tuaj.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Linqe të Shpejta</h4>
+                    <ul>
+                        <li><a href="index.html">Faqja Kryesore</a></li>
+                        <li><a href="about.html">Rreth Nesh</a></li>
+                        <li><a href="services.html">Shërbimet</a></li>
+                        <li><a href="contact.html">Kontakti</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Kontakti</h4>
+                    <p>📍 Rruga Ramadan Rexhepi, Ferizaj</p>
+                    <p>📞 +383 49 162 111</p>
+                    <p>✉️ medina@medina-ks.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Orari</h4>
+                    <p>E Hënë - E Premte: 08:00 - 20:00</p>
+                    <p>E Shtunë: 09:00 - 15:00</p>
+                    <p>E Dielë: E Mbyllur</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Klinika Medina. Të gjitha të drejtat e rezervuara.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/service-details.js"></script>
+</body>
+</html>
+
