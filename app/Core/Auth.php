@@ -128,6 +128,7 @@ class Auth
     public function requireLogin()
     {
         if (!$this->isLoggedIn()) {
+            $_SESSION['redirect_after_login'] = $_SERVER['REQUEST_URI'];
             header('Location: /login.php');
             exit;
         }
@@ -135,9 +136,32 @@ class Auth
 
     public function requireAdmin()
     {
+        if (!$this->isLoggedIn()) {
+            $_SESSION['redirect_after_login'] = $_SERVER['REQUEST_URI'];
+            header('Location: /login.php');
+            exit;
+        }
+
         if (!$this->isAdmin()) {
             header('Location: /index.php');
             exit;
         }
+    }
+
+    public function getRedirectUrl()
+    {
+        if (isset($_SESSION['redirect_after_login'])) {
+            $url = $_SESSION['redirect_after_login'];
+            unset($_SESSION['redirect_after_login']);
+            return $url;
+        }
+
+        $user = $this->getUser();
+        
+        if ($user && $user['role'] === 'admin') {
+            return '/admin/dashboard.php';
+        }
+
+        return '/index.php';
     }
 }

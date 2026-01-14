@@ -21,13 +21,13 @@
                     <li><a href="services.php" class="<?php echo ($currentPage ?? '') === 'services' ? 'active' : ''; ?>">Shërbimet</a></li>
                     <li><a href="contact.php" class="<?php echo ($currentPage ?? '') === 'contact' ? 'active' : ''; ?>">Kontakti</a></li>
                     <?php if (isset($_SESSION['user_id'])): ?>
-                        <?php if ($_SESSION['role'] === 'admin'): ?>
-                            <li><a href="admin/dashboard.php">Dashboard</a></li>
+                        <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
+                            <li><a href="/admin/dashboard.php">Dashboard</a></li>
                         <?php endif; ?>
-                        <li><a href="logout.php" class="btn-login">Dil</a></li>
+                        <li><a href="/logout.php" class="btn-login">Dil</a></li>
                     <?php else: ?>
-                        <li><a href="login.php" class="btn-login">Login</a></li>
-                        <li><a href="register.php" class="btn-register">Regjistrohu</a></li>
+                        <li><a href="/login.php" class="btn-login">Login</a></li>
+                        <li><a href="/register.php" class="btn-register">Regjistrohu</a></li>
                     <?php endif; ?>
                 </ul>
                 <div class="hamburger" id="hamburger">

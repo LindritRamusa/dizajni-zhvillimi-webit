@@ -3,6 +3,7 @@
 require_once __DIR__ . '/../app/autoload.php';
 
 use App\Core\Auth;
+use App\Core\Middleware;
 
 session_start();
 
@@ -10,14 +11,7 @@ $auth = new Auth();
 
 $error = '';
 
-if ($auth->isLoggedIn()) {
-    if ($auth->isAdmin()) {
-        header('Location: /admin/dashboard.php');
-    } else {
-        header('Location: /index.php');
-    }
-    exit;
-}
+Middleware::guestOnly();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'] ?? '';
@@ -26,11 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $result = $auth->login($email, $password);
 
     if ($result['success']) {
-        if ($result['role'] === 'admin') {
-            header('Location: /admin/dashboard.php');
-        } else {
-            header('Location: /index.php');
-        }
+        $redirectUrl = $auth->getRedirectUrl();
+        header('Location: ' . $redirectUrl);
         exit;
     } else {
         $error = $result['message'];
