@@ -1,8 +1,14 @@
 <?php
 
-require_once __DIR__ . '/../app/Core/Database.php';
+require_once __DIR__ . '/../app/autoload.php';
+
+use App\Models\Service;
 
 session_start();
+
+$serviceModel = new Service();
+$services = $serviceModel->findAll();
+$servicesPreview = array_slice($services, 0, 3);
 
 $pageTitle = 'Klinika Medina - Faqja Kryesore';
 $pageDescription = 'Klinika Medina - Kujdesi mjekësor profesional dhe i sigurt';
@@ -79,24 +85,26 @@ require_once __DIR__ . '/../views/layouts/header.php';
     <div class="container">
         <h2 class="section-title">Shërbimet Tona</h2>
         <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">🩺</div>
-                <h3>Konsultime Mjekësore</h3>
-                <p>Konsultime me mjekë specialistë për çdo problem shëndetësor</p>
-                <a href="service-details.php?id=1" class="btn-secondary">Më Shumë</a>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🔬</div>
-                <h3>Analiza Laboratorike</h3>
-                <p>Teste dhe analiza të plota laboratorike me rezultate të shpejta</p>
-                <a href="service-details.php?id=2" class="btn-secondary">Më Shumë</a>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">💉</div>
-                <h3>Vaksinime</h3>
-                <p>Vaksinime për të gjitha moshën dhe për udhëtime</p>
-                <a href="service-details.php?id=3" class="btn-secondary">Më Shumë</a>
-            </div>
+            <?php if (empty($servicesPreview)): ?>
+                <div class="service-card">
+                    <div class="service-icon">🩺</div>
+                    <h3>Shërbime Mjekësore</h3>
+                    <p>Konsultime me mjekë specialistë për çdo problem shëndetësor</p>
+                </div>
+            <?php else: ?>
+                <?php foreach ($servicesPreview as $service): ?>
+                    <div class="service-card">
+                        <?php if ($service['icon']): ?>
+                            <div class="service-icon"><?php echo htmlspecialchars($service['icon']); ?></div>
+                        <?php else: ?>
+                            <div class="service-icon">🩺</div>
+                        <?php endif; ?>
+                        <h3><?php echo htmlspecialchars($service['title']); ?></h3>
+                        <p><?php echo htmlspecialchars($service['subtitle'] ?? $service['description'] ?? 'Shërbim mjekësor profesional'); ?></p>
+                        <a href="service-details.php?id=<?php echo $service['id']; ?>" class="btn-secondary">Më Shumë</a>
+                    </div>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </div>
         <div class="text-center">
             <a href="services.php" class="btn-primary">Shiko Të Gjitha Shërbimet</a>
