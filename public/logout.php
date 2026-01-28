@@ -2,12 +2,9 @@
 
 require_once __DIR__ . '/../app/autoload.php';
 
-use App\Core\Auth;
+use App\Controllers\AuthController;
 
 session_start();
 
-$auth = new Auth();
-$auth->logout();
-
-header('Location: /index.php');
-exit;
+$controller = new AuthController();
+$controller->logout();

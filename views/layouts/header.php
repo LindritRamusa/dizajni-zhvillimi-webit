@@ -19,6 +19,7 @@
                     <li><a href="index.php" class="<?php echo ($currentPage ?? '') === 'home' ? 'active' : ''; ?>">Faqja Kryesore</a></li>
                     <li><a href="about.php" class="<?php echo ($currentPage ?? '') === 'about' ? 'active' : ''; ?>">Rreth Nesh</a></li>
                     <li><a href="services.php" class="<?php echo ($currentPage ?? '') === 'services' ? 'active' : ''; ?>">Shërbimet</a></li>
+                    <li><a href="news.php" class="<?php echo ($currentPage ?? '') === 'news' ? 'active' : ''; ?>">Lajmet</a></li>
                     <li><a href="contact.php" class="<?php echo ($currentPage ?? '') === 'contact' ? 'active' : ''; ?>">Kontakti</a></li>
                     <?php if (isset($_SESSION['user_id'])): ?>
                         <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>

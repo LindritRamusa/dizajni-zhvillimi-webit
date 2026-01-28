@@ -1,13 +1,8 @@
 <?php
-require_once __DIR__ . '/../../app/autoload.php';
-
-use App\Core\Middleware;
-use App\Core\Auth;
-
 if (!isset($auth)) {
     session_start();
-    Middleware::requireAdmin();
-    $auth = new Auth();
+    \App\Core\Middleware::requireAdmin();
+    $auth = new \App\Core\Auth();
     $user = $auth->getUser();
 }
 ?>
@@ -22,8 +17,9 @@ if (!isset($auth)) {
     <link rel="stylesheet" href="/css/responsive.css">
 </head>
 <body>
-    <div class="admin-wrapper">
-        <aside class="admin-sidebar">
+    <div class="admin-wrapper" id="adminWrapper">
+        <div class="admin-sidebar-overlay" id="adminSidebarOverlay" aria-hidden="true"></div>
+        <aside class="admin-sidebar" id="adminSidebar">
             <div class="admin-sidebar-header">
                 <h2>Klinika Medina</h2>
                 <p class="admin-user-name"><?php echo htmlspecialchars($user['name']); ?></p>
@@ -60,6 +56,12 @@ if (!isset($auth)) {
                             <span>Mesazhet</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="content.php" class="admin-nav-link <?php echo ($currentPage ?? '') === 'content' ? 'active' : ''; ?>">
+                            <span class="nav-icon">📄</span>
+                            <span>Përmbajtja</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <div class="admin-sidebar-footer">
@@ -76,6 +78,11 @@ if (!isset($auth)) {
         <main class="admin-main">
             <header class="admin-topbar">
                 <div class="admin-topbar-content">
+                    <button type="button" class="admin-menu-btn" id="adminMenuBtn" aria-label="Hap menunë" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                     <h1><?php echo $pageTitle ?? 'Dashboard'; ?></h1>
                     <div class="admin-topbar-actions">
                         <span class="admin-role-badge">Administrator</span>

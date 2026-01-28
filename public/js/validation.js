@@ -304,7 +304,7 @@ document.addEventListener('DOMContentLoaded', function() {
             phoneInput.addEventListener('blur', function() {
                 const phone = this.value.trim();
                 if (phone === '') {
-                    showError('contactPhoneError', 'Telefoni është i detyrueshëm');
+                    clearError('contactPhoneError');
                 } else if (!validatePhone(phone)) {
                     showError('contactPhoneError', 'Numri i telefonit nuk është i vlefshëm');
                 } else {
@@ -315,11 +315,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (subjectInput) {
             subjectInput.addEventListener('change', function() {
-                if (this.value === '') {
-                    showError('contactSubjectError', 'Ju lutem zgjidhni temën');
-                } else {
-                    clearError('contactSubjectError');
-                }
+                clearError('contactSubjectError');
             });
         }
 
@@ -337,8 +333,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
             let isValid = true;
             const name = nameInput.value.trim();
             const email = emailInput.value.trim();
@@ -366,21 +360,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 clearError('contactEmailError');
             }
 
-            if (phone === '') {
-                showError('contactPhoneError', 'Telefoni është i detyrueshëm');
-                isValid = false;
-            } else if (!validatePhone(phone)) {
+            if (phone !== '' && !validatePhone(phone)) {
                 showError('contactPhoneError', 'Numri i telefonit nuk është i vlefshëm');
                 isValid = false;
             } else {
                 clearError('contactPhoneError');
-            }
-
-            if (subject === '') {
-                showError('contactSubjectError', 'Ju lutem zgjidhni temën');
-                isValid = false;
-            } else {
-                clearError('contactSubjectError');
             }
 
             if (message === '') {
@@ -393,9 +377,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 clearError('contactMessageError');
             }
 
-            if (isValid) {
-                console.log('Mesazhi juaj është dërguar me sukses');
-                contactForm.reset();
+            if (!isValid) {
+                e.preventDefault();
             }
         });
     }

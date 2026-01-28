@@ -1,6 +1,7 @@
             </div>
         </main>
     </div>
+    <script src="/js/admin-nav.js"></script>
     <script src="/js/main.js"></script>
     <?php if (isset($additionalScripts)): ?>
         <?php foreach ($additionalScripts as $script): ?>

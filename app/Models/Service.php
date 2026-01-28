@@ -2,17 +2,8 @@
 
 namespace App\Models;
 
-use App\Core\Database;
-
-class Service
+class Service extends Model
 {
-    private $db;
-
-    public function __construct()
-    {
-        $this->db = Database::getInstance();
-    }
-
     public function findAll()
     {
         $sql = "SELECT s.*, u.name as creator_name 

@@ -2,15 +2,12 @@
 
 namespace App\Models;
 
-use App\Core\Database;
-
-class User
+class User extends Model
 {
-    private $db;
-
-    public function __construct()
+    public function findAll()
     {
-        $this->db = Database::getInstance();
+        $sql = "SELECT id, name, email, phone, role, created_at FROM users ORDER BY created_at DESC";
+        return $this->db->fetchAll($sql);
     }
 
     public function findByEmail($email)

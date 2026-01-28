@@ -1040,6 +1040,35 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
+}
+
+.admin-menu-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: none;
+    background: var(--bg-light);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.admin-menu-btn:hover {
+    background: var(--border-color);
+}
+
+.admin-menu-btn span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text-color);
+    margin: 0 auto;
+    transition: transform 0.3s, opacity 0.3s;
 }
 
 .admin-topbar h1 {

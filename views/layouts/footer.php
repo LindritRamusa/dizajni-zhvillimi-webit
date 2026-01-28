@@ -11,6 +11,7 @@
                         <li><a href="index.php">Faqja Kryesore</a></li>
                         <li><a href="about.php">Rreth Nesh</a></li>
                         <li><a href="services.php">Shërbimet</a></li>
+                        <li><a href="news.php">Lajmet</a></li>
                         <li><a href="contact.php">Kontakti</a></li>
                     </ul>
                 </div>
